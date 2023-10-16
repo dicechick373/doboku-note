@@ -2,6 +2,10 @@
   "index": "Introduction",
   "another": "Another Page",
   "advanced": "Advanced (A Folder)",
+  "load": {
+    "title": "道路",
+    "type": "page"
+  },
   "about": {
     "title": "About",
     "type": "page"
