@@ -1,9 +1,12 @@
 {
   "index": "Introduction",
   "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
   "load": {
     "title": "道路",
+    "type": "page"
+  },
+  "low": {
+    "title": "法律",
     "type": "page"
   },
   "about": {
