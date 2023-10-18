@@ -1,6 +1,4 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
   "load": {
     "title": "道路",
     "type": "page"
@@ -9,6 +7,8 @@
     "title": "法律",
     "type": "page"
   },
+  "index": "当サイトについて",
+  "another": "Another Page",
   "about": {
     "title": "About",
     "type": "page"
