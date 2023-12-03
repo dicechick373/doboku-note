@@ -2,6 +2,11 @@ import React from "react";
 import { DocsThemeConfig } from "nextra-theme-docs";
 
 const config: DocsThemeConfig = {
+  head: (
+    <>
+      <meta name="google-adsense-account" content="ca-pub-7995274743017484" />
+    </>
+  ),
   logo: <span>doboku-note</span>,
   darkMode: false,
   // project: {
