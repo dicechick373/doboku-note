@@ -1,3 +1,15 @@
 {
-  "section1": "土質"
+  "overview": "施工管理の概要",
+  "construction-plan": "施工計画",
+  "project-management": "工程管理",
+  "quality-management": "品質管理",
+  "safety-management": "安全管理",
+  "environmental-conservation-management": "環境保全管理",
+  "relevant-regulations": "関係法規",
+  "earthworks": "土工",
+  "construction-machinery": "建設機械",
+  "concrete-work": "コンクリート工",
+  "foundation-work": "基礎工",
+  "surveying": "測量",
+  "demolition-work": "解体工事"
 }
