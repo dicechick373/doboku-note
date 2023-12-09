@@ -1,0 +1,13 @@
+{
+  "summary": "施工計画の概説",
+  "pre-survey": "事前調査",
+  "basic-plan": "基本計画",
+  "project-schedule": "工程計画",
+  "provisional-facilities-plan": "仮設備計画",
+  "procurement-plan": "調達計画",
+  "cost-control-plan": "原価管理計画",
+  "quality-management-plan": "品質管理計画",
+  "safety-management-plan": "安全管理計画",
+  "environmental-conservation-plan": "環境保全計画",
+  "others": "その他の管理的事項に関する計画"
+}
