@@ -9,40 +9,16 @@ def get_file_list(path):
     files =  glob.glob(f'{path}/**/*.mdx')
     return files
 
-# def query_gpt_chat(prompt):
-#     try:
-#         response = openai.ChatCompletion.create(
-#             model="gpt-4-1106-preview",
-#             temperature = 0,
-#             messages=[
-#                 {"role": "system", "content": "You are a helpful assistant."},
-#                 {"role": "user", "content": prompt}
-#             ],
-#         )
-#         result = response.choices[0]["message"]["content"]
-#         # print(result)
-#     except AttributeError as e:
-#         error_message = f"Error: {e}"
-#         # print(error_message)
-#         result = error_message 
-
-    
-#     return result
-
 
 def convert_text(text):
-    """
-    テキストを変換
-    """
-    # OPEN_API_KEY = os.environ['OPEN_API_KEY']
-    # llm = OpenAIChat(openai_api_key=OPEN_API_KEY ,temperature=0.0)
-    
+
 
     prompt = f'''
         あなたはプロの人気ブロガーです。
         下記の文章の内容は変えずに、語尾をですます調に変換してください。
         必要以上に丁寧にならないように注意してください。
         出力結果は変換後のテキストのみとしてください。
+        「◯◯ページ参照」という表現があれば、削除してください。
     
         # 文章
         {text}
@@ -72,6 +48,11 @@ def convert_file(file):
             
             # 先頭がQの場合はそのまま出力
             if re.match('^Q', s_line):
+                result.append(s_line)
+                continue
+            
+            # 先頭が数字の場合はそのまま出力
+            if re.match('^[0-9]', s_line):
                 result.append(s_line)
                 continue
             
