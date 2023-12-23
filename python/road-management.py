@@ -19,8 +19,7 @@ def convert_text(text):
 
     prompt = f'''
         あなたはプロの人気ブロガーです。
-        下記の文章の内容は変えずに、丁寧な文章表現に変換してください。
-        「ございます」などの丁寧すぎる表現は不要です。
+        下記の文章の内容は変えずに、ですます調の文章に変換してください。
         誤字脱字がある場合は、修正してください。先頭のQやAはそのまま出力してください。
         出力結果は変換後のテキストのみとしてください。
     
@@ -65,7 +64,7 @@ def convert_file(file):
     return result
 
 
-def convert_text_batch(path):
+def convert_batch(path):
     # ディレクトリを指定
     path = "pages/load/road-management"
         
@@ -81,7 +80,7 @@ def convert_text_batch(path):
         with open(file, mode='w', encoding='utf-8') as f:
             f.write('\n'.join(result))
     
-def convert_text(file):
+def convert(file):
     
     print(f'{file} を処理中.....')
     
@@ -96,17 +95,8 @@ def convert_text(file):
 
 if __name__ == "__main__":
     
-    # ディレクトリを指定
-    path = "pages/load/road-management"
-        
-    files = get_file_list(path)
+    file = "pages/load/road-management/road-concept/restrictions-on-private-rights.mdx"
     
-    for i,file in enumerate(files):
-        print(f'{i+1}/{len(files)} を処理中.....')
+    convert_file(file)
         
-        # LLMを利用して変換
-        result = convert_file(file)
-        
-        # 上書き保存
-        with open(file, mode='w', encoding='utf-8') as f:
-            f.write('\n'.join(result))
+    
