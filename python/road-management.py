@@ -83,7 +83,6 @@ def convert(file):
     
     # LLMを利用して変換
     result = convert_file(file)
-    print(result)
     
     # 上書き保存
     with open(file, mode='w', encoding='utf-8') as f:
