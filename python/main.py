@@ -110,7 +110,7 @@ def convert(file):
 
 if __name__ == "__main__":
     
-    file = "pages/load/road-management/survey-on-roads/significance.mdx"
+    file = "pages/load/road-management/survey-on-roads/type.mdx"
     
     convert(file)
         
