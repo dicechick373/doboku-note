@@ -16,15 +16,16 @@ def convert_text(text):
     prompt = f'''
         あなたはプロのWEB記事編集者です。下記の文章の内容は変えずに、語尾をですます調に変換してください。
         必要以上に丁寧にならないように注意してください。
-        文章に"道路法第◯条"という表現がある場合は、Markdownリンクに変換してください。すでにMarkdownリンクになっている場合はそのままにしてください。
+        文章に"道路法第◯条"や"高速自動車国道法第◯条"という表現がある場合は、Markdownリンクに変換してください。すでにMarkdownリンクになっている場合はそのままにしてください。
         出力結果は変換後のテキストのみとしてください。
         
         例の入力：
-         "道路法第15条によれば、運転者は信号に従う必要があります。速度制限に関するのは道路法第30条です。"
+         - "道路法第15条によれば、運転者は信号に従う必要があります。速度制限に関するのは道路法第30条です。"
+         - "高速自動車国道法第23条に基づき、国土交通大臣が行う道路に関する調査があります。"
          
         期待される出力:
-         "道路法第15条によれば、運転者は信号に従う必要があります。速度制限に関するのは[道路法第30条](https://elaws.e-gov.go.jp/document?lawid=327AC1000000180#Mp-At_30)です。"
-        
+         - "道路法第15条によれば、運転者は信号に従う必要があります。速度制限に関するのは[道路法第30条](https://elaws.e-gov.go.jp/document?lawid=327AC1000000180#Mp-At_30)です。"
+         - "[高速自動車国道法第23条](https://elaws.e-gov.go.jp/document?lawid=332AC0000000079#Mp-At_23)に基づき、国土交通大臣が行う道路に関する調査があります。"
     
         # 文章
         {text}
@@ -109,7 +110,7 @@ def convert(file):
 
 if __name__ == "__main__":
     
-    file = "pages/load/road-management/road-concept/road-establishment-to-abolition.mdx"
+    file = "pages/load/road-management/survey-on-roads/significance.mdx"
     
     convert(file)
         
