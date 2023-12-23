@@ -25,6 +25,7 @@ def convert_text(text):
          - "道路交通法第1条によれば"
          - "施行令第4条第 1 項 14 号の規定により、"
          - "様式については施行規則 5Ⅲ 参照"
+         - "港湾法 2 条 Ⅱ"
          
         期待される出力:
          - "道路法第15条によれば、運転者は信号に従う必要があります。速度制限に関するのは[道路法第30条](https://elaws.e-gov.go.jp/document?lawid=327AC1000000180#Mp-At_30)です。"
@@ -32,7 +33,7 @@ def convert_text(text):
          - "[道路交通法第1条](https://elaws.e-gov.go.jp/document?lawid=335AC0000000105#Mp-At_1)によれば"
          - "[施行令第4条](https://elaws.e-gov.go.jp/document?lawid=327CO0000000479_20230401_504CO0000000378#Mp-At_4)第 1 項 14 号の規定により、"
          - "様式については[道路法施行規則第5条](https://elaws.e-gov.go.jp/document?lawid=327M50004000025#Mp-At_5)第3項参照"
-    
+         - "[港湾法第2条](https://elaws.e-gov.go.jp/document?lawid=325AC0000000218#Mp-At_2)第2項"
         # 文章
         {text}
     '''
@@ -116,7 +117,7 @@ def convert(file):
 
 if __name__ == "__main__":
     
-    file = "pages/load/road-management/route-designation-certification/significance.mdx"
+    file = "pages/load/road-management/route-designation-certification/designation.mdx"
     
     convert(file)
         
