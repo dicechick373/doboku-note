@@ -1,11 +1,13 @@
 import glob
 import re
-from langchain.llms import OpenAIChat
-import os
-from dotenv import load_dotenv
-load_dotenv()
-import openai
-openai.api_key = os.environ['OPEN_API_KEY']
+# from langchain.llms import OpenAIChat
+# import os
+# from dotenv import load_dotenv
+# load_dotenv()
+# import openai
+# openai.api_key = os.environ['OPEN_API_KEY']
+
+from chatGPTTextConversion.gpt4 import chat
 
 def get_file_list(path):
     """
@@ -14,26 +16,25 @@ def get_file_list(path):
     files =  glob.glob(f'{path}/**/*.mdx')
     return files
 
-def query_gpt_chat(prompt):
-    try:
-        response = openai.ChatCompletion.create(
-            model="gpt-4-1106-preview",
-            temperature = 0,
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": prompt}
-            ],
-        )
-        result = response.choices[0]["message"]["content"]
-        # print(result)
-    except AttributeError as e:
-        error_message = f"Error: {e}"
-        # print(error_message)
-        result = error_message 
+# def query_gpt_chat(prompt):
+#     try:
+#         response = openai.ChatCompletion.create(
+#             model="gpt-4-1106-preview",
+#             temperature = 0,
+#             messages=[
+#                 {"role": "system", "content": "You are a helpful assistant."},
+#                 {"role": "user", "content": prompt}
+#             ],
+#         )
+#         result = response.choices[0]["message"]["content"]
+#         # print(result)
+#     except AttributeError as e:
+#         error_message = f"Error: {e}"
+#         # print(error_message)
+#         result = error_message 
 
     
-    return result
-
+#     return result
 
 
 def convert_text(text):
@@ -55,7 +56,7 @@ def convert_text(text):
     '''
     
     # result = llm(prompt)
-    result = query_gpt_chat(prompt)
+    result = chat(prompt)
     print(text)
     print(result)
         
@@ -118,7 +119,7 @@ def convert(file):
 
 if __name__ == "__main__":
     
-    file = "pages/load/road-management/road-concept/restrictions-on-private-rights.mdx"
+    file = "pages/load/road-management/road-concept/road-range.mdx"
     
     convert(file)
         
