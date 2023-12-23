@@ -14,11 +14,17 @@ def convert_text(text):
 
 
     prompt = f'''
-        あなたはプロの人気ブロガーです。
-        下記の文章の内容は変えずに、語尾をですます調に変換してください。
+        あなたはプロのWEB記事編集者です。下記の文章の内容は変えずに、語尾をですます調に変換してください。
         必要以上に丁寧にならないように注意してください。
+        文章に"道路法第◯条"という表現がある場合は、Markdownリンクに変換してください。すでにMarkdownリンクになっている場合はそのままにしてください。
         出力結果は変換後のテキストのみとしてください。
-        「◯◯ページ参照」という表現があれば、削除してください。
+        
+        例の入力：
+         "道路法第15条によれば、運転者は信号に従う必要があります。速度制限に関するのは道路法第30条です。"
+         
+        期待される出力:
+         "道路法第15条によれば、運転者は信号に従う必要があります。速度制限に関するのは[道路法第30条](https://elaws.e-gov.go.jp/document?lawid=327AC1000000180#Mp-At_30)です。"
+        
     
         # 文章
         {text}
@@ -48,6 +54,11 @@ def convert_file(file):
             
             # 先頭がQの場合はそのまま出力
             if re.match('^Q', s_line):
+                result.append(s_line)
+                continue
+            
+            # 先頭が>の場合はそのまま出力
+            if re.match('^>', s_line):
                 result.append(s_line)
                 continue
             
@@ -93,7 +104,7 @@ def convert(file):
 
 if __name__ == "__main__":
     
-    file = "pages/load/road-management/road-concept/road-type.mdx"
+    file = "pages/load/road-management/road-concept/road-appendages.mdx"
     
     convert(file)
         
