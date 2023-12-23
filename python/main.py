@@ -30,8 +30,7 @@ def convert_text(text):
          - "道路法第15条によれば、運転者は信号に従う必要があります。速度制限に関するのは[道路法第30条](https://elaws.e-gov.go.jp/document?lawid=327AC1000000180#Mp-At_30)です。"
          - "[高速自動車国道法第23条](https://elaws.e-gov.go.jp/document?lawid=332AC0000000079#Mp-At_23)に基づき、国土交通大臣が行う道路に関する調査があります。"
          - "[道路交通法第1条](https://elaws.e-gov.go.jp/document?lawid=335AC0000000105#Mp-At_1)によれば"
-         - "[施行令第4条](https://elaws.e-gov.go.jp/document?lawid=327CO0000000479_20230401_504CO0000000378#Mp-At_4)
-         - 第 1 項 14 号の規定により、"
+         - "[施行令第4条](https://elaws.e-gov.go.jp/document?lawid=327CO0000000479_20230401_504CO0000000378#Mp-At_4)第 1 項 14 号の規定により、"
          - "様式については[道路法施行規則第5条](https://elaws.e-gov.go.jp/document?lawid=327M50004000025#Mp-At_5)第3項参照"
     
         # 文章
