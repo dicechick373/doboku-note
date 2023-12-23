@@ -1,6 +1,9 @@
 import glob
 import re
 from langchain.llms import OpenAIChat
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 def get_file_list(path):
     """
@@ -14,7 +17,7 @@ def convert_text(text):
     """
     テキストを変換
     """
-    OPEN_API_KEY = "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"
+    OPEN_API_KEY = os.environ['OPEN_API_KEY']
     llm = OpenAIChat(openai_api_key=OPEN_API_KEY ,temperature=0.0)
 
     prompt = f'''
