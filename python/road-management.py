@@ -30,8 +30,8 @@ def convert_text(text):
     
     result = llm(prompt)
     
-    print(text)
-    print(result)
+    # print(text)
+    # print(result)
     
     return result
 
@@ -50,10 +50,49 @@ def convert_file(file):
                 result.append(s_line)
                 continue
             
+            # 先頭がQの場合はそのまま出力
+            if re.match('^Q', s_line):
+                result.append(s_line)
+                continue
+            
+            # 先頭が数字の場合はそのまま出力
+            if re.match('0-9', s_line):
+                result.append(s_line)
+                continue
+            
             result.append(convert_text(s_line))
     
     return result
 
+
+def convert_text_batch(path):
+    # ディレクトリを指定
+    path = "pages/load/road-management"
+        
+    files = get_file_list(path)
+    
+    for i,file in enumerate(files):
+        print(f'{i+1}/{len(files)} を処理中.....')
+        
+        # LLMを利用して変換
+        result = convert_file(file)
+        
+        # 上書き保存
+        with open(file, mode='w', encoding='utf-8') as f:
+            f.write('\n'.join(result))
+    
+def convert_text(file):
+    
+    print(f'{file} を処理中.....')
+    
+    # LLMを利用して変換
+    result = convert_file(file)
+    
+    # 上書き保存
+    with open(file, mode='w', encoding='utf-8') as f:
+        f.write('\n'.join(result))
+        
+    
 
 if __name__ == "__main__":
     
