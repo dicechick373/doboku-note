@@ -1,12 +1,5 @@
 import glob
 import re
-# from langchain.llms import OpenAIChat
-# import os
-# from dotenv import load_dotenv
-# load_dotenv()
-# import openai
-# openai.api_key = os.environ['OPEN_API_KEY']
-
 from chatGPTTextConversion.gpt4 import chat
 
 def get_file_list(path):
@@ -119,7 +112,7 @@ def convert(file):
 
 if __name__ == "__main__":
     
-    file = "pages/load/road-management/road-concept/road-range.mdx"
+    file = "pages/load/road-management/road-concept/road-type.mdx"
     
     convert(file)
         
