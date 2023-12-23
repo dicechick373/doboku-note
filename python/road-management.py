@@ -5,6 +5,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+
 def get_file_list(path):
     """
     ディレクトリ内のmdxファイルを取得
@@ -19,11 +20,11 @@ def convert_text(text):
     """
     OPEN_API_KEY = os.environ['OPEN_API_KEY']
     llm = OpenAIChat(openai_api_key=OPEN_API_KEY ,temperature=0.0)
+    
 
     prompt = f'''
         あなたはプロの人気ブロガーです。
         下記の文章の内容は変えずに、ですます調の文章に変換してください。
-        誤字脱字がある場合は、修正してください。先頭のQやAはそのまま出力してください。
         出力結果は変換後のテキストのみとしてください。
     
         # 文章
@@ -31,10 +32,7 @@ def convert_text(text):
     '''
     
     result = llm(prompt)
-    
-    # print(text)
-    # print(result)
-    
+        
     return result
 
 def convert_file(file):
@@ -57,10 +55,6 @@ def convert_file(file):
                 result.append(s_line)
                 continue
             
-            # 先頭が数字の場合はそのまま出力
-            if re.match('0-9', s_line):
-                result.append(s_line)
-                continue
             
             result.append(convert_text(s_line))
     
@@ -89,6 +83,7 @@ def convert(file):
     
     # LLMを利用して変換
     result = convert_file(file)
+    print(result)
     
     # 上書き保存
     with open(file, mode='w', encoding='utf-8') as f:
@@ -100,6 +95,6 @@ if __name__ == "__main__":
     
     file = "pages/load/road-management/road-concept/restrictions-on-private-rights.mdx"
     
-    convert_file(file)
+    convert(file)
         
     
