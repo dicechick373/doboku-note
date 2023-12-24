@@ -43,8 +43,10 @@ def convert_text(text):
     
     # result = llm(prompt)
     result = chat(prompt)
+
     print(text)
     print(result)
+    print('------------------')
         
     return result
 
@@ -125,7 +127,7 @@ def convert(file):
 
 if __name__ == "__main__":
     
-    file = "pages/load/road-management/road-zone-determination/significance.mdx"
+    file = "pages/load/road-management/road-zone-determination/procedure.mdx"
     
     convert(file)
         
