@@ -78,6 +78,11 @@ def convert_file(file):
                 result.append(s_line)
                 continue
             
+            # 先頭が!の場合はそのまま出力
+            if re.match('^（', s_line):
+                result.append(s_line)
+                continue
+            
             # 先頭が数字の場合はそのまま出力
             if re.match('^[0-9]', s_line):
                 result.append(s_line)
