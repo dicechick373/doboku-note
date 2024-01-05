@@ -1,6 +1,6 @@
 import glob
 import re
-from chatGPTTextConversion.gpt4 import chat
+from chatGPTTextConversion.gpt3 import chat
 
 def get_file_list(path):
     """
@@ -130,8 +130,8 @@ def convert(file):
     
 
 if __name__ == "__main__":
-    
-    file = "pages/load/road-management/road-construction/acquisition-of-land/advance-acquisition.mdx"
+
+    file = "pages/load/road-management/road-construction/acquisition-of-land/compensation-criteria.mdx"
     
     convert(file)
         
