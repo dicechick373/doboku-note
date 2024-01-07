@@ -114,7 +114,7 @@ def convert(file):
 
 if __name__ == "__main__":
 
-    file = "pages/load/road-management/road-construction/acquisition-of-land/propertyownership.mdx"
+    file = "pages/load/road-management/road-construction/acquisition-of-land/removal.mdx"
     
     convert(file)
         
